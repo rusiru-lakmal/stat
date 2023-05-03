@@ -1,0 +1,51 @@
+databas <-read.csv("dat.csv")
+summary(databas)
+#install.packages("ggplot2")
+library(ggplot2)
+
+# Rotten.Tomato 
+ggplot(databas, aes( Rotten.Tomato )) +
+  geom_histogram(aes(y = ..density..,), color = "#000000", fill = "#E14D2A") +
+  geom_density(color = "#000000", fill = "#F85700", alpha = 0.6)
+
+#IMDB
+ggplot(databas, aes(IMDB)) +
+  geom_histogram(aes(y = ..density..,), color = "#98A8F8", fill = "#98A8F8") +
+  geom_density(color = "#98A8F8", fill = "#749F82", alpha = 0.6)
+
+#Production.budget
+
+ggplot(databas, aes(Production.budget)) +
+  geom_histogram(aes(y = ..density..,), color = "#98A8F8", fill = "#98A8F8") +
+  geom_density(color = "#98A8F8", fill = "#749F82", alpha = 0.6)
+
+#Opening.weekend.theaters
+ggplot(databas, aes(Opening.weekend.theaters)) +
+  geom_histogram(aes(y = ..density..,), color = "#98A8F8", fill = "#98A8F8") +
+  geom_density(color = "#98A8F8", fill = "#749F82", alpha = 0.6)
+
+#Maximum.theaters
+ggplot(databas, aes(Maximum.theaters)) +
+  geom_histogram(aes(y = ..density..,), color = "#98A8F8", fill = "#98A8F8") +
+  geom_density(color = "#98A8F8", fill = "#749F82", alpha = 0.6)
+
+#Opening.weekend.theaters
+ggplot(databas, aes(Opening.weekend.theaters)) +
+  geom_histogram(aes(y = ..density..,), color = "#98A8F8", fill = "#98A8F8") +
+  geom_density(color = "#98A8F8", fill = "#749F82", alpha = 0.6)
+
+#Worldwide.boxoffice
+ggplot(databas, aes(Worldwide.boxoffice)) +
+  geom_histogram(aes(y = ..density..,), color = "#98A8F8", fill = "#98A8F8") +
+  geom_density(color = "#98A8F8", fill = "#749F82", alpha = 0.6)
+
+
+library(dplyr)
+genereCat <- databas %>%
+  group_by(Genre) %>%
+  tally()
+
+genereCat
+
+
+
